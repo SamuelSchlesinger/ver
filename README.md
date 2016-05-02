@@ -9,3 +9,5 @@ To build, run "make" and the executable will float up from the dist to the top d
 a Haskell purist you can just cabal build or whatever.
 
 The usage will be generated automatically and printed if you attempt to use it (see cmd).
+
+Currently having an unreasonably tough time pushing files to archive in snap. I'm going to work on that some more tomorrow, but give it a rest for now.

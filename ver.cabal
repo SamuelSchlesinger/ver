@@ -57,7 +57,7 @@ executable ver
   -- other-extensions:    
   
   -- Other library packages from which modules are imported.
-  build-depends:       bytestring, filepath, directory >= 1.2, aeson, base >=4.8 && <4.9
+  build-depends:       zip-conduit, MissingH, time, bytestring, filepath, directory >= 1.2, aeson, base >=4.8 && <4.9
   
   -- Directories containing source files.
   hs-source-dirs:      src

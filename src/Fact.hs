@@ -63,6 +63,7 @@ flatten (UniFact name value) = [(name, value)]
 flatten (MultiFact facts) = case facts of
                                 [] -> []
                                 (x:xs) -> (flatten x) ++ (flatten' xs) where
+                                    flatten' [] = []
                                     flatten' (x:xs) = (flatten x) ++ (flatten' xs)
 flatten EmptyFact = []
 

@@ -1,6 +1,6 @@
 {-# LANGUAGE DeriveGeneric #-}
 
-module FS (Repo(..), getRepo, findHead, fsProgram) where
+module FS (Repo(..), getRepo, findHead, fsProgram, listPaths) where
 
 import GHC.Generics
 import Control.Monad
@@ -27,6 +27,11 @@ data Repo = Directory { path :: FilePath, contents :: [Repo] }
 
 instance FromJSON Repo
 instance ToJSON Repo
+
+listPaths :: Repo -> [String]
+listPaths DoesntExist = []
+listPaths (File path) = [path]
+listPaths (Directory path contents) = [path] ++ (foldr (++) [] (map listPaths contents))
 
 findHead :: FilePath -> IO FilePath
 findHead current = do 
